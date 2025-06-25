@@ -1,0 +1,12 @@
+diff --git a/node_modules/@hashbrownai/core/src/streaming-json-parser/parser.js b/node_modules/@hashbrownai/core/src/streaming-json-parser/parser.js
+index 911178a..996c571 100644
+--- a/node_modules/@hashbrownai/core/src/streaming-json-parser/parser.js
++++ b/node_modules/@hashbrownai/core/src/streaming-json-parser/parser.js
+@@ -510,6 +510,7 @@ const _parseJSON = (jsonString, schema) => {
+         const result = parseAny('', false, false);
+         // We returned, but have we not consumed the whole length?
+         if (index < length) {
++            console.log('Extra data after end of parsing', {jsonString});
+             throwMalformedError('Extra data after end of parsing');
+         }
+         return result;
